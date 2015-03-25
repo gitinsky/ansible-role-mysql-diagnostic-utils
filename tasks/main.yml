@@ -1,0 +1,9 @@
+---
+- name: install mytop
+  yum: name=mytop state=present
+
+- name: install git
+  yum: name=git state=present
+
+- name: checkout mysqlreport
+  git: repo=git@github.com:daniel-nichter/hackmysql.com.git dest=/root/mysqlreport accept_hostkey=true
