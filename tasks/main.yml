@@ -6,4 +6,4 @@
   yum: name=git state=present
 
 - name: checkout mysqlreport
-  git: repo=git@github.com:daniel-nichter/hackmysql.com.git dest=/root/mysqlreport accept_hostkey=true
+  git: repo=https://github.com/daniel-nichter/hackmysql.com.git dest=/root/mysqlreport accept_hostkey=true
