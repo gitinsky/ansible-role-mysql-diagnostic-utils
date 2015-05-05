@@ -1,9 +1,19 @@
 ---
 - name: install mytop
   yum: name=mytop state=present
+  when: ansible_os_family == 'RedHat'
+
+- name: install mytop
+  apt: name=mytop state=present
+  when: ansible_os_family == 'Debian'
 
 - name: install git
   yum: name=git state=present
+  when: ansible_os_family == 'RedHat'
+
+- name: install git
+  apt: name=git state=present
+  when: ansible_os_family == 'Debian'
 
 - name: checkout mysqlreport
   git: repo=https://github.com/daniel-nichter/hackmysql.com.git dest=/root/mysqlreport accept_hostkey=true
